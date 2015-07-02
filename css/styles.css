@@ -1,0 +1,9 @@
+form {
+    border: 1px solid #ccc;
+    padding: 5%;
+    margin: 5%;
+}
+
+.form-group.textarea {
+/*     width: 100%; */
+}
