@@ -9,6 +9,8 @@
 
     <!-- Bootstrap -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-datetimepicker.css" rel="stylesheet">
+
 
     <!-- Custom Styles -->
     <link href="../css/styles.css" rel="stylesheet">
@@ -22,410 +24,431 @@
   </head>
   <body>
       
-    <form id="Course_Form">        
-        <fieldset>
-            <legend><p>Course Form</p></legend>
-            <div class="form-group">
-                <label for="CrsTitle">Course Title</label>
-                <input type="text" class="form-control" name="CrsTitle" placeholder="Course Title">
-            </div>
-            <div class="form-group">
-                <label for="CrsNumber">Course Number</label>
-                <input type="text" class="form-control" name="CrsNumber" placeholder="Course Number">
-            </div>
-            <div class="form-group">
-                <label for="ClassNumber">Class Number</label>
-                <input type="text" class="form-control" name="ClassNumber" placeholder="Class Number">
-            </div>
-            <div class="form-group">
-                <label for="Type">Type</label>
-                <select name="Type_Select" class="form-control">
-                    <option value="CRS">Course</option>
-                    <option value="ILP">ILP</option>
-                    <option value="TC">Transfer Credit</option>
-                    <option value="PE">Proficiency Exam</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="College">College</label>
-                <select name="College" class="form-control">
-                    <option value="">Driehaus College of Business</option>
-                    <option value="">College of Communication</option>
-                    <option value="">College of Computing and Digital Media</option>
-                    <option value="">College of Education</option>
-                    <option value="">College of Law</option>
-                    <option value="">College of Liberal Arts and Social Sciences</option>
-                    <option value="">College of Science and Health</option>
-                    <option value="">The Theatre School</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="School">School</label>
-                <select name="School" class="form-control">
-                    <option value="">School of Cinematic Arts</option>
-                    <option value="">School of Computing​</option>
-                    <option value="">School of Design​</option>
-                    <option value="">School of Public Service</option>
-                    <option value="">School of Nursing</option>
-                    <option value="">School of Music</option>
-                    <option value="">School for New Learning</option>
-                    <option value="">The Theatre School</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="Syllabus">Syllabus</label>
-                <textarea class="form-control" rows="3" name="Syllabus"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="Subject">Subject</label>
-                <input type="text" class="form-control" name="Subject" placeholder="Subject">
-            </div>
-            <div class="form-group">
-                <label for="Section">Section</label>
-                <input type="text" class="form-control" name="Section" placeholder="Section">
-            </div>
-            <div class="form-group">
-                <label for="Units">Units</label>
-                <input type="text" class="form-control" name="Units" placeholder="Units">
-            </div>
-            <div class="form-group">
-                <label for="Instructor">Instructor</label>
-                <input type="text" class="form-control" name="Instructor" placeholder="Instructor">
-            </div>
-            <div class="form-group">
-                <label for="Term">Term</label>
-                <select name="Term" class="form-control">
-    				<option value="0955">2014-2015 Summer</option>
-    				<option value="0960">2015-2016 Autumn</option>
-    				<option value="0964">2015-2016 DEC Session</option>
-    				<option value="0965">2015-2016 Winter</option>
-    				<option value="0970">2015-2016 Spring</option>
-    			</select>
-            </div>
-            <div class="form-group">
-                <label for="Location">Location</label>
-                <input type="text" class="form-control" name="Location" placeholder="Location">
-            </div>
-            <div class="form-group">
-                <label for="Days_Times">Days and Times</label>
-                <input type="text" class="form-control" name="Days_Times" placeholder="Days and Times">
-            </div>
-            <div class="form-group">
-                <p>Start and End Date</p>
+    <div id="Main_Nav">
+        <a href="#">Open &darr;</a>
+        <a href="#">Close &times;</a>        
+        <ul class="nav nav-pills nav-stacked">            
+            <li><a href="#">Course</a></li>
+            <li><a href="#">Competency</a></li>
+            <li><a href="#">ILP</a></li>
+            <li><a href="#">Major</a></li>
+            <li><a href="#">Focus Area</a></li>
+            <li><a href="#">Grades</a></li>
+            <li><a href="#">Faculty</a></li>
+            <li><a href="#">Milestones</a></li>                                                                                    
+            <li><a href="#">Prerequisites</a></li>
+        </ul>
+    </div>      
+    
+    <section class="form-container">
+        
+        <form id="Course_Form">        
+            <fieldset>
+                <legend><p>Course Form</p></legend>
                 <div class="form-group">
-                    <div class='input-group date' id='Start_Date'>
+                    <label for="CrsTitle">Course Title</label>
+                    <input type="text" class="form-control" name="CrsTitle" placeholder="Course Title">
+                </div>
+                <div class="form-group">
+                    <label for="CrsNumber">Course Number</label>
+                    <input type="text" class="form-control" name="CrsNumber" placeholder="Course Number">
+                </div>
+                <div class="form-group">
+                    <label for="ClassNumber">Class Number</label>
+                    <input type="text" class="form-control" name="ClassNumber" placeholder="Class Number">
+                </div>
+                <div class="form-group">
+                    <label for="Type">Type</label>
+                    <select name="Type_Select" class="form-control">
+                        <option value="CRS">Course</option>
+                        <option value="ILP">ILP</option>
+                        <option value="TC">Transfer Credit</option>
+                        <option value="PE">Proficiency Exam</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="College">College</label>
+                    <select name="College" class="form-control">
+                        <option value="">Driehaus College of Business</option>
+                        <option value="">College of Communication</option>
+                        <option value="">College of Computing and Digital Media</option>
+                        <option value="">College of Education</option>
+                        <option value="">College of Law</option>
+                        <option value="">College of Liberal Arts and Social Sciences</option>
+                        <option value="">College of Science and Health</option>
+                        <option value="">The Theatre School</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="School">School</label>
+                    <select name="School" class="form-control">
+                        <option value="">School of Cinematic Arts</option>
+                        <option value="">School of Computing​</option>
+                        <option value="">School of Design​</option>
+                        <option value="">School of Public Service</option>
+                        <option value="">School of Nursing</option>
+                        <option value="">School of Music</option>
+                        <option value="">School for New Learning</option>
+                        <option value="">The Theatre School</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="Syllabus">Syllabus</label>
+                    <textarea class="form-control" rows="3" name="Syllabus"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Subject">Subject</label>
+                    <input type="text" class="form-control" name="Subject" placeholder="Subject">
+                </div>
+                <div class="form-group">
+                    <label for="Section">Section</label>
+                    <input type="text" class="form-control" name="Section" placeholder="Section">
+                </div>
+                <div class="form-group">
+                    <label for="Units">Units</label>
+                    <input type="text" class="form-control" name="Units" placeholder="Units">
+                </div>
+                <div class="form-group">
+                    <label for="Instructor">Instructor</label>
+                    <input type="text" class="form-control" name="Instructor" placeholder="Instructor">
+                </div>
+                <div class="form-group">
+                    <label for="Term">Term</label>
+                    <select name="Term" class="form-control">
+        				<option value="0955">2014-2015 Summer</option>
+        				<option value="0960">2015-2016 Autumn</option>
+        				<option value="0964">2015-2016 DEC Session</option>
+        				<option value="0965">2015-2016 Winter</option>
+        				<option value="0970">2015-2016 Spring</option>
+        			</select>
+                </div>
+                <div class="form-group">
+                    <label for="Location">Location</label>
+                    <input type="text" class="form-control" name="Location" placeholder="Location">
+                </div>
+                <div class="form-group">
+                    <label for="Days_Times">Days and Times</label>
+                    <input type="text" class="form-control" name="Days_Times" placeholder="Days and Times">
+                </div>
+                <div class="form-group">
+                    <p>Start and End Date</p>
+                    <div class="form-group">
+                        <div class='input-group date' id='Start_Date'>
+                            <input type='text' class="form-control" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">    
+                        <div class='input-group date' id='End_Date'>
+                            <input type='text' class="form-control" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Credit_Hrs">Credit Hours</label>
+                    <input type="text" class="form-control" name="Credit_Hrs" placeholder="Credit_Hrs">
+                </div>
+                <div class="form-group">
+                    <label for="Grade">Grade</label>
+                    <select name="Grade" class="form-control">
+                        <option value="">A+</option>
+                        <option value="">A​</option>
+                        <option value="">A-​</option>
+                        <option value="">B+</option>
+                        <option value="">B</option>
+                        <option value="">B-​</option>
+                        <option value="">C+</option>
+                        <option value="">C</option>
+                        <option value="">C-​</option>
+                        <option value="">D</option>
+                        <option value="">F</option>
+                        <option value="">I-​</option>                
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="Difficulty_Level">Difficulty Level</label>
+                    <input type="text" class="form-control" name="Difficulty_Level" placeholder="Difficulty Level">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>                             
+                <button type="button" class="close">&times;</button>                
+            </fieldset>
+        </form>
+        
+        <form id="Competency_Form">        
+            <fieldset>
+                <legend><p>Competency Form</p></legend>
+                <div class="form-group">
+                    <label for="Statement">Competency Statement</label>
+                    <textarea class="form-control" rows="3" name="Statement"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="CmpNumber">Competency Number</label>
+                    <input type="text" class="form-control" name="CmpNumber" placeholder="Competency Number">
+                </div>
+                <div class="form-group">
+                    <label for="Criterion_N">Criterion</label>
+                    <textarea class="form-control" rows="3" name="Criterion_N"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Learning_Area">Learning Area</label>
+                    <input type="text" class="form-control" name="Learning_Area" placeholder="Learning Area">
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label><input type="checkbox">Completed</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox">In-Progress</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox">Planned</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox">Undecided</label>
+                    </div>    
+                </div>
+                <div class="form-group">
+                    <label for="Demonstration_Notes">Demonstration Notes</label>
+                    <textarea class="form-control" rows="3" name="Demonstration_Notes"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Competency_Notes">Notes</label>
+                    <textarea class="form-control" rows="3" name="Competency_Notes"></textarea>
+                </div>            
+                <button type="submit" class="btn btn-default">Submit</button>                 
+                <button type="button" class="close">&times;</button>                
+            </fieldset>
+        </form>
+        
+        <form id="ILP_Form">
+            <fieldset>
+                <legend><p>ILP Form</p></legend>   
+                <div class="form-group">
+                    <label for="ILP_Title">Title</label>
+                    <input type="text" class="form-control" name="ILP_Title" placeholder="Title">
+                </div>
+                <div class="form-group">
+                    <label for="ILP_Title">Due Date</label>
+                    <div class='input-group date' id='ILP_Due_Date' name='ILP_Due_Date'>
                         <input type='text' class="form-control" />
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                         </span>
                     </div>
                 </div>
-                <div class="form-group">    
-                    <div class='input-group date' id='End_Date'>
+                <div class="form-group">
+                    <label for="Overview">Overview</label>
+                    <textarea class="form-control" rows="3" name="Overview"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Criteria_N">Criteria #N</label>
+                    <textarea class="form-control" rows="3" name="Criteria_N"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Methodology">Methodology</label>
+                    <textarea class="form-control" rows="3" name="Methodology"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Resource_N">Resource #N</label>
+                    <textarea class="form-control" rows="3" name="Resource_N"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Rationale">Rationale</label>
+                    <textarea class="form-control" rows="3" name="Rationale"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Context">Context</label>
+                    <textarea class="form-control" rows="3" name="Context"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Experience">The Experience</label>
+                    <textarea class="form-control" rows="3" name="Experience"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Relevance">Relevance</label>
+                    <textarea class="form-control" rows="3" name="Relevance"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Reflection">Reflection</label>
+                    <textarea class="form-control" rows="3" name="Reflection"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Ideas">Ideas</label>
+                    <textarea class="form-control" rows="3" name="Ideas"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Application">Application</label>
+                    <textarea class="form-control" rows="3" name="Application"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Assesment">Assesment</label>
+                    <textarea class="form-control" rows="3" name="Assesment"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Future">Future</label>
+                    <textarea class="form-control" rows="3" name="Future"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Application">Application</label>
+                    <textarea class="form-control" rows="3" name="Application"></textarea>
+                </div>  
+                <button type="submit" class="btn btn-default">Submit</button>                 
+                <button type="button" class="close">&times;</button>                
+            </fieldset>
+        </form>
+        
+        <form id="Major_Form">        
+            <fieldset>
+                <legend><p>Major Form</p></legend>
+                <div class="form-group">
+                    <label for="Major_Title">Title</label>
+                    <input type="text" class="form-control" name="ILP_Title" placeholder="Title">
+                </div>
+                <div class="form-group">
+                    <label for="Description">Description</label>
+                    <textarea class="form-control" rows="3" name="Description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Competency_N">Competency #N</label>
+                    <textarea class="form-control" rows="3" name="Competency_N"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Required_Course_N">Required Course #N</label>
+                    <textarea class="form-control" rows="3" name="Required_Course_N"></textarea>
+                </div>  
+                <button type="submit" class="btn btn-default">Submit</button>                 
+                <button type="button" class="close">&times;</button>                
+            </fieldset>
+        </form>
+        
+        <form id="Minor_Form">        
+            <fieldset>
+                <legend><p>Minor Form</p></legend>
+                <div class="form-group">
+                    <label for="Major_Title">Title</label>
+                    <input type="text" class="form-control" name="ILP_Title" placeholder="Title">
+                </div>
+                <div class="form-group">
+                    <label for="Description">Description</label>
+                    <textarea class="form-control" rows="3" name="Description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Competency_N">Competency #N</label>
+                    <textarea class="form-control" rows="3" name="Competency_N"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Required_Course_N">Required Course #N</label>
+                    <textarea class="form-control" rows="3" name="Required_Course_N"></textarea>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>                 
+                <button type="button" class="close">&times;</button>                
+            </fieldset>
+        </form>
+        
+        <form id="Faculty_Form">        
+            <fieldset>
+                <legend><p>Faculty Form</p></legend>
+                <div class="form-group">
+                    <label for="Title">Title</label>
+                    <input type="text" class="form-control" name="Title" placeholder="Title">
+                </div>
+                <div class="form-group">
+                    <label for="First_Name">First Name</label>
+                    <input type="text" class="form-control" name="First_Name" placeholder="First_Name">
+                </div>
+                <div class="form-group">
+                    <label for="Last_Name">Last Name</label>
+                    <input type="text" class="form-control" name="Last_Name" placeholder="Last Name">
+                </div>
+                <div class="form-group">
+                    <label for="Phone">Phone</label>
+                    <input type="text" class="form-control" name="Phone" placeholder="Phone">
+                </div>
+                <div class="form-group">
+                    <label for="Department">Department</label>
+                    <input type="text" class="form-control" name="Department" placeholder="Department">
+                </div>
+                <div class="form-group">
+                    <label for="Specialty">Specialty</label>
+                    <input type="text" class="form-control" name="Specialty" placeholder="Specialty">
+                </div>                   
+                <button type="submit" class="btn btn-default">Submit</button>                 
+                <button type="button" class="close">&times;</button>                
+            </fieldset>
+        </form>
+        
+        <form id="Milestones_Form">        
+            <fieldset>
+                <legend><p>Milestones Form</p></legend>
+                <div class="form-group">
+                    <label for="Title">Title</label>
+                    <input type="text" class="form-control" name="Title" placeholder="Title">
+                </div>
+                <div class="form-group">
+                    <label for="CrsNumber">Course Number</label>
+                    <input type="text" class="form-control" name="CrsNumber" placeholder="Course Number">
+                </div>
+                <div class="form-group">
+                    <label for="CmpNumber">Competency Number</label>
+                    <input type="text" class="form-control" name="CmpNumber" placeholder="Competency Number">
+                </div>
+                <div class="form-group">
+                    <label for="Term">Term</label>
+                    <select name="Term" class="form-control">
+        				<option value="0955">2014-2015 Summer</option>
+        				<option value="0960">2015-2016 Autumn</option>
+        				<option value="0964">2015-2016 DEC Session</option>
+        				<option value="0965">2015-2016 Winter</option>
+        				<option value="0970">2015-2016 Spring</option>
+        			</select>
+                </div>
+                <div class="form-group">
+                    <label for="Description">Description</label>
+                    <textarea class="form-control" rows="3" name="Description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="ILP_Title">Due Date</label>
+                    <div class='input-group date' id='ILP_Due_Date' name='ILP_Due_Date'>
                         <input type='text' class="form-control" />
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                         </span>
                     </div>
+                </div>         
+                <button type="submit" class="btn btn-default">Submit</button> 
+                <button type="button" class="close">&times;</button>                
+            </fieldset>
+        </form>
+        
+        <form id="Prerequisites_Form">        
+            <fieldset>
+                <legend><p>Prerequisites Form</p></legend>
+                <div class="form-group">
+                    <label for="CrsNumber">Course Number</label>
+                    <input type="text" class="form-control" name="CrsNumber" placeholder="Course Number">
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="Credit_Hrs">Credit Hours</label>
-                <input type="text" class="form-control" name="Credit_Hrs" placeholder="Credit_Hrs">
-            </div>
-            <div class="form-group">
-                <label for="Grade">Grade</label>
-                <select name="Grade" class="form-control">
-                    <option value="">A+</option>
-                    <option value="">A​</option>
-                    <option value="">A-​</option>
-                    <option value="">B+</option>
-                    <option value="">B</option>
-                    <option value="">B-​</option>
-                    <option value="">C+</option>
-                    <option value="">C</option>
-                    <option value="">C-​</option>
-                    <option value="">D</option>
-                    <option value="">F</option>
-                    <option value="">I-​</option>                
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="Difficulty_Level">Difficulty Level</label>
-                <input type="text" class="form-control" name="Difficulty_Level" placeholder="Difficulty Level">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>                             
-            <button type="button" class="close">&times;</button>                
-        </fieldset>
-    </form>
-    
-    <form id="Competency_Form">        
-        <fieldset>
-            <legend><p>Competency Form</p></legend>
-            <div class="form-group">
-                <label for="Statement">Competency Statement</label>
-                <textarea class="form-control" rows="3" name="Statement"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="CmpNumber">Competency Number</label>
-                <input type="text" class="form-control" name="CmpNumber" placeholder="Competency Number">
-            </div>
-            <div class="form-group">
-                <label for="Criterion_N">Criterion</label>
-                <textarea class="form-control" rows="3" name="Criterion_N"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="Learning_Area">Learning Area</label>
-                <input type="text" class="form-control" name="Learning_Area" placeholder="Learning Area">
-            </div>
-            <div class="form-group">
-                <div class="checkbox">
-                    <label><input type="checkbox">Completed</label>
-                </div>
-                <div class="checkbox">
-                    <label><input type="checkbox">In-Progress</label>
-                </div>
-                <div class="checkbox">
-                    <label><input type="checkbox">Planned</label>
-                </div>
-                <div class="checkbox">
-                    <label><input type="checkbox">Undecided</label>
-                </div>    
-            </div>
-            <div class="form-group">
-                <label for="Demonstration_Notes">Demonstration Notes</label>
-                <textarea class="form-control" rows="3" name="Demonstration_Notes"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="Competency_Notes">Notes</label>
-                <textarea class="form-control" rows="3" name="Competency_Notes"></textarea>
-            </div>            
-            <button type="submit" class="btn btn-default">Submit</button>                 
-            <button type="button" class="close">&times;</button>                
-        </fieldset>
-    </form>
-    
-    <form id="ILP_Form">
-        <fieldset>
-            <legend><p>ILP Form</p></legend>   
-            <div class="form-group">
-                <label for="ILP_Title">Title</label>
-                <input type="text" class="form-control" name="ILP_Title" placeholder="Title">
-            </div>
-            <div class="form-group">
-                <label for="ILP_Title">Due Date</label>
-                <div class='input-group date' id='ILP_Due_Date' name='ILP_Due_Date'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="Overview">Overview</label>
-                <textarea class="form-control" rows="3" name="Overview"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="Criteria_N">Criteria #N</label>
-                <textarea class="form-control" rows="3" name="Criteria_N"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="Methodology">Methodology</label>
-                <textarea class="form-control" rows="3" name="Methodology"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="Resource_N">Resource #N</label>
-                <textarea class="form-control" rows="3" name="Resource_N"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="Rationale">Rationale</label>
-                <textarea class="form-control" rows="3" name="Rationale"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="Context">Context</label>
-                <textarea class="form-control" rows="3" name="Context"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="Experience">The Experience</label>
-                <textarea class="form-control" rows="3" name="Experience"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="Relevance">Relevance</label>
-                <textarea class="form-control" rows="3" name="Relevance"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="Reflection">Reflection</label>
-                <textarea class="form-control" rows="3" name="Reflection"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="Ideas">Ideas</label>
-                <textarea class="form-control" rows="3" name="Ideas"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="Application">Application</label>
-                <textarea class="form-control" rows="3" name="Application"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="Assesment">Assesment</label>
-                <textarea class="form-control" rows="3" name="Assesment"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="Future">Future</label>
-                <textarea class="form-control" rows="3" name="Future"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="Application">Application</label>
-                <textarea class="form-control" rows="3" name="Application"></textarea>
-            </div>  
-            <button type="submit" class="btn btn-default">Submit</button>                 
-            <button type="button" class="close">&times;</button>                
-        </fieldset>
-    </form>
-    
-    <form id="Major_Form">        
-        <fieldset>
-            <legend><p>Major Form</p></legend>
-            <div class="form-group">
-                <label for="Major_Title">Title</label>
-                <input type="text" class="form-control" name="ILP_Title" placeholder="Title">
-            </div>
-            <div class="form-group">
-                <label for="Description">Description</label>
-                <textarea class="form-control" rows="3" name="Description"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="Competency_N">Competency #N</label>
-                <textarea class="form-control" rows="3" name="Competency_N"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="Required_Course_N">Required Course #N</label>
-                <textarea class="form-control" rows="3" name="Required_Course_N"></textarea>
-            </div>  
-            <button type="submit" class="btn btn-default">Submit</button>                 
-            <button type="button" class="close">&times;</button>                
-        </fieldset>
-    </form>
-    
-    <form id="Minor_Form">        
-        <fieldset>
-            <legend><p>Minor Form</p></legend>
-            <div class="form-group">
-                <label for="Major_Title">Title</label>
-                <input type="text" class="form-control" name="ILP_Title" placeholder="Title">
-            </div>
-            <div class="form-group">
-                <label for="Description">Description</label>
-                <textarea class="form-control" rows="3" name="Description"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="Competency_N">Competency #N</label>
-                <textarea class="form-control" rows="3" name="Competency_N"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="Required_Course_N">Required Course #N</label>
-                <textarea class="form-control" rows="3" name="Required_Course_N"></textarea>
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>                 
-            <button type="button" class="close">&times;</button>                
-        </fieldset>
-    </form>
-    
-    <form id="Faculty_Form">        
-        <fieldset>
-            <legend><p>Faculty Form</p></legend>
-            <div class="form-group">
-                <label for="Title">Title</label>
-                <input type="text" class="form-control" name="Title" placeholder="Title">
-            </div>
-            <div class="form-group">
-                <label for="First_Name">First Name</label>
-                <input type="text" class="form-control" name="First_Name" placeholder="First_Name">
-            </div>
-            <div class="form-group">
-                <label for="Last_Name">Last Name</label>
-                <input type="text" class="form-control" name="Last_Name" placeholder="Last Name">
-            </div>
-            <div class="form-group">
-                <label for="Phone">Phone</label>
-                <input type="text" class="form-control" name="Phone" placeholder="Phone">
-            </div>
-            <div class="form-group">
-                <label for="Department">Department</label>
-                <input type="text" class="form-control" name="Department" placeholder="Department">
-            </div>
-            <div class="form-group">
-                <label for="Specialty">Specialty</label>
-                <input type="text" class="form-control" name="Specialty" placeholder="Specialty">
-            </div>                   
-            <button type="submit" class="btn btn-default">Submit</button>                 
-            <button type="button" class="close">&times;</button>                
-        </fieldset>
-    </form>
-    
-    <form id="Milestones_Form">        
-        <fieldset>
-            <legend><p>Milestones Form</p></legend>
-            <div class="form-group">
-                <label for="Title">Title</label>
-                <input type="text" class="form-control" name="Title" placeholder="Title">
-            </div>
-            <div class="form-group">
-                <label for="CrsNumber">Course Number</label>
-                <input type="text" class="form-control" name="CrsNumber" placeholder="Course Number">
-            </div>
-            <div class="form-group">
-                <label for="CmpNumber">Competency Number</label>
-                <input type="text" class="form-control" name="CmpNumber" placeholder="Competency Number">
-            </div>
-            <div class="form-group">
-                <label for="Term">Term</label>
-                <select name="Term" class="form-control">
-    				<option value="0955">2014-2015 Summer</option>
-    				<option value="0960">2015-2016 Autumn</option>
-    				<option value="0964">2015-2016 DEC Session</option>
-    				<option value="0965">2015-2016 Winter</option>
-    				<option value="0970">2015-2016 Spring</option>
-    			</select>
-            </div>
-            <div class="form-group">
-                <label for="Description">Description</label>
-                <textarea class="form-control" rows="3" name="Description"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="ILP_Title">Due Date</label>
-                <div class='input-group date' id='ILP_Due_Date' name='ILP_Due_Date'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>         
-            <button type="submit" class="btn btn-default">Submit</button> 
-            <button type="button" class="close">&times;</button>                
-        </fieldset>
-    </form>
-    
-    <form id="Prerequisites_Form">        
-        <fieldset>
-            <legend><p>Prerequisites Form</p></legend>
-            <div class="form-group">
-                <label for="CrsNumber">Course Number</label>
-                <input type="text" class="form-control" name="CrsNumber" placeholder="Course Number">
-            </div>
-            <div class="form-group">
-                <label for="P_Crs_N">Parent Course #N</label>
-                <input type="text" class="form-control" name="P_Crs_N" placeholder="Parent Course N">
-            </div>  
-            <button type="submit" class="btn btn-default">Submit</button>                 
-            <button type="button" class="close">&times;</button>                
-        </fieldset>
-    </form>
+                <div class="form-group">
+                    <label for="P_Crs_N">Parent Course #N</label>
+                    <input type="text" class="form-control" name="P_Crs_N" placeholder="Parent Course N">
+                </div>  
+                <button type="submit" class="btn btn-default">Submit</button>                 
+                <button type="button" class="close">&times;</button>                
+            </fieldset>
+        </form>
+
+    </section>  
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script type="text/javascript" src="../js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/moment.js"></script>
-    <script type="text/javascript" src="../js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="../js/bdq.js"></script>
   </body>
 </html>

@@ -1,9 +1,26 @@
 form {
     border: 1px solid #ccc;
     padding: 5%;
-    margin: 5%;
+}
+
+label {display: inline-block;}
+
+.form-group {
+    width: 50%;
+    float: left;
+    padding: 0 1%;
 }
 
 .form-group.textarea {
 /*     width: 100%; */
+}
+
+.form-container {
+  float: right;
+  width: 80%;
+}
+
+#Main_Nav {
+  float: left;
+  width: 20%;
 }
