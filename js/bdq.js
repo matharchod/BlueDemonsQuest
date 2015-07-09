@@ -11,6 +11,9 @@ var BDQ = {
         $('#D_Frame').contents(content);
         console.log(content);
     },
+    "domains"   : {
+        
+    },
     "requestCrossDomain": function ( site, callback ) {            
         // Accepts a url and a callback function to run.
         // If no url was passed, exit.
@@ -20,7 +23,7 @@ var BDQ = {
         }
          
         // Take the provided url, and add it to a YQL query. Make sure you encode it!
-        var yql = 'http://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent('select * from html where url="' + site + '"') + '&format=xml&callback=cbFunc';
+        var yql = 'http://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent('select * from html where url="' + site + '"') + '&format=xml&callback=?';
         
         console.log('yql = ', yql);
          
@@ -53,16 +56,21 @@ var BDQ = {
 
 }
 
+function loadPage(site) {
+    BDQ.requestCrossDomain(site, function(results){
+        $('#D_Frame').contents('');
+        $('#D_Frame').html(results);
+    });    
+}
+
 
 $(function(){
     BDQ.init();
 
     //EVENT LISTENERS FOR MAIN NAV       
     $('a').click(function(){
-        BDQ.requestCrossDomain('http://www.cnn.com', function(results){
-//             $('#D_Frame').contents(results);
-console.log(results);
-        });
+        var siteLink = $(this).attr('rel');
+        loadPage(siteLink);
     });
     
 });

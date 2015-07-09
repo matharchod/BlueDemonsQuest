@@ -16,16 +16,45 @@ label {display: inline-block;}
 }
 
 .form-container {
-  float: left;
+  display: inline-block;
   width: 35%;
+  vertical-align: top;
 }
 
 #Main_Nav {
-  float: left;
+  display: inline-block;
   width: 15%;
 }
 
 #D_Frame {
-    width: 50%;
-    float: left;
+  width: 42%;
+  display: inline-block;
+  position: absolute;
+  height: 100%;
+  background-color: lightblue;
+  overflow: auto;
+  background-image: url('../imx/loading.gif');
+  background-repeat: no-repeat;
+  background-position: center 10%;      
+}
+
+#D_Frame * {
+  width: auto !important;
+  background-color: #fff !important;
+}
+
+.loading {
+  background-image: url('../imx/loading.gif');
+  background-repeat: no-repeat;
+  background-position: center 10%;    
+}
+
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+  position: absolute;
+  height: 100%;
 }
