@@ -1,25 +1,26 @@
-form {
-    border: 1px solid #ccc;
-    padding: 5%;
-}
-
-label {display: inline-block;}
-
-.form-group {
-    width: 50%;
-    float: left;
-    padding: 0 1%;
-}
-
-.form-group.textarea {
-/*     width: 100%; */
-}
-
 .form-container {
   display: inline-block;
   width: 35%;
   vertical-align: top;
 }
+
+.form-container form {
+    display: none;
+    border: 1px solid #ccc;
+    padding: 5%;
+}
+.form-container form.active {display: inline-block;}
+
+.form-container label {display: inline-block;}
+
+.form-container .form-group {
+    padding: 0 1%;
+}
+
+.form-container .form-group.textarea {
+/*     width: 100%; */
+}
+
 
 #Main_Nav {
   display: inline-block;
@@ -57,4 +58,5 @@ body {
   background-color: #fff;
   position: absolute;
   height: 100%;
+  width: 100%;
 }

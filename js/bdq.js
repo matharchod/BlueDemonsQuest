@@ -68,9 +68,14 @@ $(function(){
     BDQ.init();
 
     //EVENT LISTENERS FOR MAIN NAV       
-    $('a').click(function(){
-        var siteLink = $(this).attr('rel');
+    $('#Main_Nav a').click(function(){
+        var siteLink = $(this).attr('rel'),
+            activeForm = $(this).attr('href');
         loadPage(siteLink);
+        //show active form
+        $(activeForm).show();
+        $('.form-container form').not(activeForm).hide();
+        console.log('activeForm = ', activeForm)
     });
     
 });
