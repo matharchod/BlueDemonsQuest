@@ -16,11 +16,16 @@ label {display: inline-block;}
 }
 
 .form-container {
-  float: right;
-  width: 80%;
+  float: left;
+  width: 35%;
 }
 
 #Main_Nav {
   float: left;
-  width: 20%;
+  width: 15%;
+}
+
+#D_Frame {
+    width: 50%;
+    float: left;
 }
