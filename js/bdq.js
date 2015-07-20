@@ -87,20 +87,26 @@ function captureCourseData($_elem) {
     var $_item = $_elem.find('div'),        
         Section = $($_item[0]).text().split(':')[1].toString().replace(/(\r\n|\n|\r)/gm,""), 
         ClassNum = $($_item[1]).text().split(':')[1].toString().replace(/(\r\n|\n|\r)/gm,""),
-        MeetTime = $($_item[2]).text().split('&nbsp;');
+        MeetTime = $($_item[2]).text().split(/(\r\n|\n|\r)/gm); //splitting at line breaks
+        MeetTime_Days = MeetTime[4].replace(/\s+/g, ''),
+        MeetTime_Start = MeetTime[6].replace(/\s+/g, ''),
+        MeetTime_End = MeetTime[10].replace(/\s+/g, ''),
         Location = $($_item[3]).text().split(':')[1].toString().replace(/(\r\n|\n|\r)/gm,""),
         Instructor = $($_item[4]).text().split(':')[1],
         Instructor = Instructor.split('|')[0].replace(/(\r\n|\n|\r)/gm,"");
         
-    console.log('Section: ', Section);                            
-    console.log('ClassNum: ', ClassNum);                            
-    console.log('MeetTime: ', MeetTime);                            
+    console.log('Section: ', Section.replace(/\s+/g, ''));                            
+    console.log('ClassNum: ', ClassNum.replace(/\s+/g, ''));                            
+    console.log('MeetTime: ', MeetTime_Days, MeetTime_Start, MeetTime_End);                            
     console.log('Location: ', Location);                            
     console.log('Instructor: ', Instructor);  
     
     return false;                          
 }
 
+function addToForm(){
+    
+}
 
 /*
 
