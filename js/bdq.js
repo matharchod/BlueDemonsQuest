@@ -64,7 +64,7 @@ function loadPage(site) {
 }
 
 function createWrapper() {
-    var $_elem = $('#CourseInfoSchedulesContainer .classInfo'),
+    var $_elem = $('#D_Frame').find('#CourseInfoSchedulesContainer .classInfo'),
         $_item = $_elem.find('div');
         
     $_elem.css('border','1px solid blue');
@@ -84,28 +84,39 @@ function createString($_item) {
 }
 
 function captureCourseData($_elem) {
-    var $_item = $_elem.find('div'),        
-        Section = $($_item[0]).text().split(':')[1].toString().replace(/(\r\n|\n|\r)/gm,""), 
-        ClassNum = $($_item[1]).text().split(':')[1].toString().replace(/(\r\n|\n|\r)/gm,""),
+    var $_item = $_elem.find('div'),
+        CrsDescription = $('#D_Frame').find('.CDMPageTitle').next().text(),        
+        Section = $($_item[0]).text().split(':')[1].toString().replace(/(\r\n|\n|\r)/gm,""), //removing line breaks
+        Section = Section.replace(/\s+/g, ''), //replace whitespace with space
+        ClassNum = $($_item[1]).text().split(':')[1].toString().replace(/(\r\n|\n|\r)/gm,""), //removing line breaks
+        ClassNum = ClassNum.replace(/\s+/g, ''), //replace whitespace with space
         MeetTime = $($_item[2]).text().split(/(\r\n|\n|\r)/gm); //splitting at line breaks
-        MeetTime_Days = MeetTime[4].replace(/\s+/g, ''),
+        MeetTime_Days = MeetTime[4].replace(/\s+/g, ''), //remove whitespace
         MeetTime_Start = MeetTime[6].replace(/\s+/g, ''),
         MeetTime_End = MeetTime[10].replace(/\s+/g, ''),
         Location = $($_item[3]).text().split(':')[1].toString().replace(/(\r\n|\n|\r)/gm,""),
-        Instructor = $($_item[4]).text().split(':')[1],
-        Instructor = Instructor.split('|')[0].replace(/(\r\n|\n|\r)/gm,"");
+        Location = Location.replace(/\s+/g, " "), //replace whitespace with space
+        Instructor = $($_item[4]).text().split(':')[1].toString(),
+        Instructor = Instructor.split('|')[0].replace(/(\r\n|\n|\r)/gm,""),
+        Instructor = Instructor.replace(/\s+/g, " "), //replace whitespace with space
+        CourseTitle = $('#D_Frame').find('.CDMPageTitle').text().toString().replace(/\s+/g, " ");
         
-    console.log('Section: ', Section.replace(/\s+/g, ''));                            
-    console.log('ClassNum: ', ClassNum.replace(/\s+/g, ''));                            
-    console.log('MeetTime: ', MeetTime_Days, MeetTime_Start, MeetTime_End);                            
-    console.log('Location: ', Location);                            
-    console.log('Instructor: ', Instructor);  
-    
-    return false;                          
+    addToForm('#Course_Form', 'CrsTitle', CourseTitle);   
+    addToForm('#Course_Form', 'SecNumber', Section);
+    addToForm('#Course_Form', 'ClassNumber', ClassNum);
+    addToForm('#Course_Form', 'Location', Location);
+    addToForm('#Course_Form', 'Instructor', Instructor);
+    addToForm('#Course_Form', 'Days_Times', MeetTime_Days + ' ' + MeetTime_Start + ' ' + MeetTime_End);
+    addToForm('#Course_Form', 'CrsDescription', CrsDescription);
+            
 }
 
-function addToForm(){
+function addToForm($_form, field, string_data){
+    var     $_DForm = $('#D_Frame').find($_form),
+            $_DField = $(document.getElementsByName(field));
     
+    $_DField.val(string_data);
+        
 }
 
 /*
@@ -130,7 +141,17 @@ $(function(){
         //show active form
         $(activeForm).show();
         $('.form-container form').not(activeForm).hide();
+        
         console.log('activeForm = ', activeForm);
+        
+        return false;                          
+
     });
+    
+    //EVENT LISTENER FOR DETAIL TOGGLE
+    $('.showDetails').on('click', function() {
+        $('.secondary-info').toggle();  
+        return false;      
+    })
     
 });

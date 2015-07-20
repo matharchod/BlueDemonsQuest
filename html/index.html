@@ -49,16 +49,30 @@
                     <button onclick="createWrapper()">Capture</button>
                 </div>
                 <div class="form-group">
-                    <label for="CrsTitle">Course Title</label>
+<!--                     <label for="CrsTitle">Course Title</label> -->
                     <input type="text" class="form-control" name="CrsTitle" placeholder="Course Title">
                 </div>
-                <div class="form-group">
-                    <label for="CrsNumber">Course Number</label>
-                    <input type="text" class="form-control" name="CrsNumber" placeholder="Course Number">
+                <div class="form-group row">
+                    <div class="col-sm-6">
+<!--                         <label for="SecNumber">Section</label> -->
+                        <input type="text" class="form-control" name="SecNumber" placeholder="Section Number">
+                    </div>
+                    <div class="col-sm-6">
+<!--                         <label for="ClassNumber">Class Number</label> -->
+                        <input type="text" class="form-control" name="ClassNumber" placeholder="Class Number">
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="ClassNumber">Class Number</label>
-                    <input type="text" class="form-control" name="ClassNumber" placeholder="Class Number">
+<!--                     <label for="Instructor">Instructor</label> -->
+                    <input type="text" class="form-control" name="Instructor" placeholder="Instructor">
+                </div>
+                <div class="form-group">
+<!--                     <label for="Days_Times">Days and Times</label> -->
+                    <input type="text" class="form-control" name="Days_Times" placeholder="Days and Times">
+                </div>
+                <div class="form-group">
+<!--                     <label for="Location">Location</label> -->
+                    <input type="text" class="form-control" name="Location" placeholder="Location">
                 </div>
                 <div class="form-group">
                     <label for="Type">Type</label>
@@ -70,112 +84,109 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="College">College</label>
-                    <select name="College" class="form-control">
-                        <option value="">Driehaus College of Business</option>
-                        <option value="">College of Communication</option>
-                        <option value="">College of Computing and Digital Media</option>
-                        <option value="">College of Education</option>
-                        <option value="">College of Law</option>
-                        <option value="">College of Liberal Arts and Social Sciences</option>
-                        <option value="">College of Science and Health</option>
-                        <option value="">The Theatre School</option>
-                    </select>
+                    <button class="showDetails">More</button>
                 </div>
-                <div class="form-group">
-                    <label for="School">School</label>
-                    <select name="School" class="form-control">
-                        <option value="">School of Cinematic Arts</option>
-                        <option value="">School of Computing​</option>
-                        <option value="">School of Design​</option>
-                        <option value="">School of Public Service</option>
-                        <option value="">School of Nursing</option>
-                        <option value="">School of Music</option>
-                        <option value="">School for New Learning</option>
-                        <option value="">The Theatre School</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="Syllabus">Syllabus</label>
-                    <textarea class="form-control" rows="3" name="Syllabus"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="Subject">Subject</label>
-                    <input type="text" class="form-control" name="Subject" placeholder="Subject">
-                </div>
-                <div class="form-group">
-                    <label for="Section">Section</label>
-                    <input type="text" class="form-control" name="Section" placeholder="Section">
-                </div>
-                <div class="form-group">
-                    <label for="Units">Units</label>
-                    <input type="text" class="form-control" name="Units" placeholder="Units">
-                </div>
-                <div class="form-group">
-                    <label for="Instructor">Instructor</label>
-                    <input type="text" class="form-control" name="Instructor" placeholder="Instructor">
-                </div>
-                <div class="form-group">
-                    <label for="Term">Term</label>
-                    <select name="Term" class="form-control">
-        				<option value="0955">2014-2015 Summer</option>
-        				<option value="0960">2015-2016 Autumn</option>
-        				<option value="0964">2015-2016 DEC Session</option>
-        				<option value="0965">2015-2016 Winter</option>
-        				<option value="0970">2015-2016 Spring</option>
-        			</select>
-                </div>
-                <div class="form-group">
-                    <label for="Location">Location</label>
-                    <input type="text" class="form-control" name="Location" placeholder="Location">
-                </div>
-                <div class="form-group">
-                    <label for="Days_Times">Days and Times</label>
-                    <input type="text" class="form-control" name="Days_Times" placeholder="Days and Times">
-                </div>
-                <div class="form-group">
-                    <p>Start and End Date</p>
+                <div class="secondary-info">
                     <div class="form-group">
-                        <div class='input-group date' id='Start_Date'>
-                            <input type='text' class="form-control" />
-                            <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
+                        <label for="CrsDescription">Course Description</label>
+                        <textarea class="form-control" rows="3" name="CrsDescription"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="College">College</label>
+                        <select name="College" class="form-control">
+                            <option value="">--</option>
+                            <option value="">Driehaus College of Business</option>
+                            <option value="">College of Communication</option>
+                            <option value="">College of Computing and Digital Media</option>
+                            <option value="">College of Education</option>
+                            <option value="">College of Law</option>
+                            <option value="">College of Liberal Arts and Social Sciences</option>
+                            <option value="">College of Science and Health</option>
+                            <option value="">The Theatre School</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="School">School</label>
+                        <select name="School" class="form-control">
+                            <option value="">--</option>
+                            <option value="">School of Cinematic Arts</option>
+                            <option value="">School of Computing​</option>
+                            <option value="">School of Design​</option>
+                            <option value="">School of Public Service</option>
+                            <option value="">School of Nursing</option>
+                            <option value="">School of Music</option>
+                            <option value="">School for New Learning</option>
+                            <option value="">The Theatre School</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Subject">Subject</label>
+                        <input type="text" class="form-control" name="Subject" placeholder="Subject">
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-3">
+                            <label for="Units">Units</label>
+                            <input type="text" class="form-control" name="Units" placeholder="Units">
+                        </div>
+                        <div class="col-sm-9">
+                            <label for="Term">Term</label>
+                            <select name="Term" class="form-control">
+                				<option value="">--</option>
+                				<option value="0955">2014-2015 Summer</option>
+                				<option value="0960">2015-2016 Autumn</option>
+                				<option value="0964">2015-2016 DEC Session</option>
+                				<option value="0965">2015-2016 Winter</option>
+                				<option value="0970">2015-2016 Spring</option>
+                			</select>
                         </div>
                     </div>
-                    <div class="form-group">    
-                        <div class='input-group date' id='End_Date'>
-                            <input type='text' class="form-control" />
-                            <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
+                    <div class="form-group row">
+                        <label style="width: 100%;">Start and End Date</label>
+                        <div class="col-sm-6">
+                            <div class='input-group date' id='Start_Date'>
+                                <input type='text' class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">    
+                            <div class='input-group date' id='End_Date'>
+                                <input type='text' class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="Credit_Hrs">Credit Hours</label>
-                    <input type="text" class="form-control" name="Credit_Hrs" placeholder="Credit_Hrs">
-                </div>
-                <div class="form-group">
-                    <label for="Grade">Grade</label>
-                    <select name="Grade" class="form-control">
-                        <option value="">A+</option>
-                        <option value="">A​</option>
-                        <option value="">A-​</option>
-                        <option value="">B+</option>
-                        <option value="">B</option>
-                        <option value="">B-​</option>
-                        <option value="">C+</option>
-                        <option value="">C</option>
-                        <option value="">C-​</option>
-                        <option value="">D</option>
-                        <option value="">F</option>
-                        <option value="">I-​</option>                
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="Difficulty_Level">Difficulty Level</label>
-                    <input type="text" class="form-control" name="Difficulty_Level" placeholder="Difficulty Level">
+                    <div class="form-group row">
+                        <div class="col-sm-4">
+                            <label for="Credit_Hrs">Credit Hours</label>
+                            <input type="text" class="form-control" name="Credit_Hrs" placeholder="Credit_Hrs">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="Grade">Grade (Course)</label>
+                            <select name="Grade" class="form-control">
+                                <option value="">--</option>
+                                <option value="">A+</option>
+                                <option value="">A​</option>
+                                <option value="">A-​</option>
+                                <option value="">B+</option>
+                                <option value="">B</option>
+                                <option value="">B-​</option>
+                                <option value="">C+</option>
+                                <option value="">C</option>
+                                <option value="">C-​</option>
+                                <option value="">D</option>
+                                <option value="">F</option>
+                                <option value="">I-​</option>                
+                            </select>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="Difficulty_Level">Difficulty Level</label>
+                            <input type="text" class="form-control" name="Difficulty_Level" placeholder="Difficulty Level">
+                        </div>
+                    </div>
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>                             
                 <button type="button" class="close">&times;</button>                
