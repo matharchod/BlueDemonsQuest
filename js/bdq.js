@@ -63,6 +63,55 @@ function loadPage(site) {
     });    
 }
 
+function createWrapper() {
+    var $_elem = $('#CourseInfoSchedulesContainer .classInfo'),
+        $_item = $_elem.find('div');
+        
+    $_elem.css('border','1px solid blue');
+    
+    $('#D_Frame #page_left_column').remove();
+    $('#D_Frame #page_header').remove();
+    
+    $_elem.on('click', function() {
+        captureCourseData($(this));
+    });
+    
+}
+
+function createString($_item) {
+    var x = $($_item).text().split(':')[1].toString();
+    return x;
+}
+
+function captureCourseData($_elem) {
+    var $_item = $_elem.find('div'),        
+        Section = $($_item[0]).text().split(':')[1].toString().replace(/(\r\n|\n|\r)/gm,""), 
+        ClassNum = $($_item[1]).text().split(':')[1].toString().replace(/(\r\n|\n|\r)/gm,""),
+        MeetTime = $($_item[2]).text().split('&nbsp;');
+        Location = $($_item[3]).text().split(':')[1].toString().replace(/(\r\n|\n|\r)/gm,""),
+        Instructor = $($_item[4]).text().split(':')[1],
+        Instructor = Instructor.split('|')[0].replace(/(\r\n|\n|\r)/gm,"");
+        
+    console.log('Section: ', Section);                            
+    console.log('ClassNum: ', ClassNum);                            
+    console.log('MeetTime: ', MeetTime);                            
+    console.log('Location: ', Location);                            
+    console.log('Instructor: ', Instructor);  
+    
+    return false;                          
+}
+
+
+/*
+
+#CourseInfoSchedulesContainer .classInfo = class information
+Section, Class number, Meeting time, Location, Instructor
+$('#D_Frame #CourseInfoSchedulesContainer .classInfo').css('border', '1px solid blue');
+
+#CourseInfoSchedulesContainer .classInfo #page_left_column = nav
+$('#D_Frame #page_left_column').remove();
+$('#D_Frame #page_header').remove();
+    */
 
 $(function(){
     BDQ.init();
@@ -75,7 +124,7 @@ $(function(){
         //show active form
         $(activeForm).show();
         $('.form-container form').not(activeForm).hide();
-        console.log('activeForm = ', activeForm)
+        console.log('activeForm = ', activeForm);
     });
     
 });
