@@ -45,6 +45,12 @@
   background-color: #fff !important;
 }
 
+#D_Frame #page_left_column,
+#D_Frame #page_header {
+    display: none;
+}
+
+
 .loading {
   background-image: url('../imx/loading.gif');
   background-repeat: no-repeat;

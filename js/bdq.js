@@ -18,7 +18,7 @@ var BDQ = {
         // Accepts a url and a callback function to run.
         // If no url was passed, exit.
         if ( !site ) {
-            alert('No site was passed.');
+            console.warn('No site was passed.');
             return false;
         }
          
@@ -69,18 +69,17 @@ function createWrapper() {
         
     $_elem.css('border','1px solid blue');
     
-    $('#D_Frame #page_left_column').remove();
-    $('#D_Frame #page_header').remove();
-    
     $_elem.on('click', function() {
         captureCourseData($(this));
     });
     
 }
 
-function createString($_item) {
-    var x = $($_item).text().split(':')[1].toString();
-    return x;
+function searchCourses() {
+    var site = $('#CrsSearch').val().split(' '),
+        subject = site[0],
+        catalogNbr = site[1];
+    loadPage('http://www.cdm.depaul.edu/academics/pages/courseinfo.aspx?Subject=' + subject + '&CatalogNbr=' + catalogNbr);   
 }
 
 function captureCourseData($_elem) {
@@ -137,7 +136,9 @@ $(function(){
     $('#Main_Nav a').click(function(){
         var siteLink = $(this).attr('rel'),
             activeForm = $(this).attr('href');
+        
         loadPage(siteLink);
+        
         //show active form
         $(activeForm).show();
         $('.form-container form').not(activeForm).hide();
