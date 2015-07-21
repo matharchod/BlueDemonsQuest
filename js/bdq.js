@@ -8,7 +8,7 @@ var BDQ = {
     "showForm" : function() {},
     "hideForm" : function() {},
     "updateIFrame"  : function(content) {
-        $('#D_Frame').contents(content);
+        $('#D_Frame .content').contents(content);
         console.log(content);
     },
     "domains"   : {
@@ -58,8 +58,7 @@ var BDQ = {
 
 function loadPage(site) {
     BDQ.requestCrossDomain(site, function(results){
-        $('#D_Frame').contents('');
-        $('#D_Frame').html(results);
+        $('#D_Frame .content').empty().html(results);
     });    
 }
 
@@ -118,7 +117,16 @@ function addToForm($_form, field, string_data){
         
 }
 
+function showCourses() {
+    var site = 'http://www.depaul.edu/university-catalog/course-descriptions/Pages/default.aspx';
+    $('#D_Frame .content').empty();
+    $('#D_Frame iframe').attr('src', site).removeClass('hidden');
+}
+
 /*
+
+Course List:
+http://www.depaul.edu/university-catalog/course-descriptions/Pages/default.aspx
 
 #CourseInfoSchedulesContainer .classInfo = class information
 Section, Class number, Meeting time, Location, Instructor
@@ -131,6 +139,11 @@ $('#D_Frame #page_header').remove();
 
 $(function(){
     BDQ.init();
+    
+    //SHOW COURSES ON DEPAL WEBSITE
+    $('#CourseTrigger').on('click', function() {
+        showCourses();
+    });
 
     //EVENT LISTENERS FOR MAIN NAV       
     $('#Main_Nav a').click(function(){

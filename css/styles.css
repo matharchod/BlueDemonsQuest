@@ -1,6 +1,6 @@
 .form-container {
   display: inline-block;
-  width: 35%;
+  width: 350px;
   vertical-align: top;
 }
 
@@ -25,11 +25,10 @@
 
 #Main_Nav {
   display: inline-block;
-  width: 15%;
 }
 
 #D_Frame {
-  width: 42%;
+  width: 950px;
   display: inline-block;
   position: absolute;
   height: 100%;
@@ -40,16 +39,31 @@
   background-position: center 10%;      
 }
 
-#D_Frame * {
+#D_Frame *:not(iframe) {
   width: auto !important;
   background-color: #fff !important;
 }
 
+#D_Frame iframe {
+    height: 100%;
+}
+
 #D_Frame #page_left_column,
-#D_Frame #page_header {
+#D_Frame #page_header,
+#D_Frame .printLogo,
+#D_Frame .ImageBreadcrumbContainer {
     display: none;
 }
 
+#D_Frame .classInfo {
+  display: inline-block;
+  height: 150px;
+  vertical-align: top;
+  margin: 10px;
+  border: 1px solid #ccc;
+}
+
+#D_Frame .content {padding: 0 5%;}
 
 .loading {
   background-image: url('../imx/loading.gif');

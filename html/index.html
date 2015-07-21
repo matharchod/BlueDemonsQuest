@@ -28,7 +28,7 @@
         <a href="#">Open &darr;</a>
         <a href="#">Close &times;</a>        
         <ul class="nav nav-pills nav-stacked">            
-            <li><a href="#Course_Form">Course</a></li>
+            <li><a href="#Course_Form" id="CourseTrigger">Course</a></li>
             <li><a href="#Competency_Form" rel="https://snlapps.depaul.edu/BAGrid/index.html">Competency</a></li>
             <li><a href="#ILP_Form" rel="http://condor.depaul.edu/writing/writers/Types_of_Writing/snl_ilp.html">ILP</a></li>
             <li><a href="#Major_Form" rel="http://www.depaul.edu/academics/undergraduate/majors/Pages/default.aspx">Major</a></li>
@@ -42,7 +42,7 @@
     
     <section class="form-container">
         
-        <form id="Course_Form">        
+            <form id="Course_Form">        
             <fieldset>
                 <legend><p>Course Form</p></legend>
                 
@@ -57,31 +57,32 @@
                 </div>
                 <div class="form-group">
                     <button onclick="createWrapper()">Select Section</button>
+                    <button onclick="showCourses()">Show Courses</button>
                 </div>
                 <div class="form-group">
-<!--                     <label for="CrsTitle">Course Title</label> -->
+                    <label for="CrsTitle">Course Title</label>
                     <input type="text" class="form-control" name="CrsTitle" placeholder="Course Title">
                 </div>
                 <div class="form-group row">
                     <div class="col-sm-6">
-<!--                         <label for="SecNumber">Section</label> -->
+                        <label for="SecNumber">Section</label>
                         <input type="text" class="form-control" name="SecNumber" placeholder="Section Number">
                     </div>
                     <div class="col-sm-6">
-<!--                         <label for="ClassNumber">Class Number</label> -->
+                        <label for="ClassNumber">Class Number</label>
                         <input type="text" class="form-control" name="ClassNumber" placeholder="Class Number">
                     </div>
                 </div>
                 <div class="form-group">
-<!--                     <label for="Instructor">Instructor</label> -->
+                    <label for="Instructor">Instructor</label>
                     <input type="text" class="form-control" name="Instructor" placeholder="Instructor">
                 </div>
                 <div class="form-group">
-<!--                     <label for="Days_Times">Days and Times</label> -->
+                    <label for="Days_Times">Days and Times</label>
                     <input type="text" class="form-control" name="Days_Times" placeholder="Days and Times">
                 </div>
                 <div class="form-group">
-<!--                     <label for="Location">Location</label> -->
+                    <label for="Location">Location</label>
                     <input type="text" class="form-control" name="Location" placeholder="Location">
                 </div>
                 <div class="form-group">
@@ -468,6 +469,8 @@
     </section>  
     
     <section id="D_Frame">
+        <div class="content"></div>
+        <iframe src="" width="950" class="hidden"></iframe>
     </section>
     
 
